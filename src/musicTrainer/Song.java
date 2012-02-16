@@ -55,8 +55,8 @@ public class Song {
 		seqr.setTrackMute(RIGHT_HAND, hand == RIGHT_HAND);
 	}
 
-	private void setTempo(float tempo) {
-		seqr.setTempoFactor(tempo);
+	private void setTempo(float tempoFactor) {
+		seqr.setTempoFactor(tempoFactor);
 	}
 
 	private long measureToTicks(int startOfMeasure) {
