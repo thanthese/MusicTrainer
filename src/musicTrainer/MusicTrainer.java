@@ -2,34 +2,42 @@ package musicTrainer;
 
 import java.io.File;
 
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.ParameterException;
+
 public class MusicTrainer {
 
 	public static void main(String[] args) {
-		
-		if(args.length != 3) {
-			printHelp();
+
+		Options opts = new Options();
+		try {
+			new JCommander(opts, args);
+		} catch (ParameterException e) {
+			showHelp();
 			System.exit(0);
 		}
 		
-		String inputMidiFile = args[0];
-		int startingMeasure = Integer.valueOf(args[1]);
-		int beatsPerMeasure = Integer.valueOf(args[2]);
+		if(opts.inputMidiFiles.size() != 1 
+				|| opts.inputMidiFiles.get(0).equals("")) {
+			showHelp();
+			System.exit(0);
+		}
 		
-		Song song = new Song(new File(inputMidiFile), beatsPerMeasure);
-		new SongRunner(song).run(startingMeasure);
+		Song song = new Song(new File(opts.inputMidiFiles.get(0)),
+				opts.beatsPerMeasure);
+		new SongRunner(song).run(opts.startingMeasure);
 		
 		System.exit(0);
 	}
-	
-	private static void printHelp() {
+
+	private static void showHelp() {
+		JCommander jcom = new JCommander(new Options());
+		jcom.setProgramName("MusicTrainer");
 		System.out.println("");
 		System.out.println("Learn to play a MIDI song on the piano!");
 		System.out.println("");
-		System.out.println("Arguments: ");
-		System.out.println("");
-		System.out.println("1.  Path to input MIDI file: ");
-		System.out.println("2.  Measure to start on (starting from 1)");
-		System.out.println("3.  Beats per measure (usually 4)");
+		jcom.usage();
+		System.out.println("The MIDI file should be a piano file with a track for each hand.");
 		System.out.println("");
 	}
 }
