@@ -10,6 +10,8 @@ It's that self-discipline you always wished you had!
 
 # Technical specifics
 
+Yeah, this is a command-line app.
+
 You'll have to build the project into a jar yourself.  Then run it:
 
     java -jar <project-jar>.jar
@@ -20,4 +22,4 @@ Once you're under way, use `return` to indicate that you've mastered a measure/s
 
 # Requirements
 
-Java (SE) 1.6 +
+Java (SE) 1.5 +
