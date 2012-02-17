@@ -4,7 +4,7 @@ To finally get that piano song under your fingers!
 
 # How it does it
 
-Start with a piano MIDI file, with one track for each hand.  This project will walk you through learning the song, repeating: one hand, then the other, then both; starting slowly, getting faster; back-tracking so you can put the measures together.
+Start with a piano MIDI file that defines one track for each hand.  This project will walk you through learning that song: repeating one hand, then the other, then both; starting slowly, getting faster; back-tracking so you can put the measures together.
 
 It's that self-discipline you always wished you had!
 
