@@ -23,3 +23,5 @@ Once you're under way, use `return` to indicate that you've mastered a measure/s
 # Requirements
 
 Java (SE) 1.5 +
+
+(JCommander)[https://github.com/cbeust/jcommander] source.  It's included into the project as the actual source, not as a .jar.  That makes it annoying to work with if you want to compile it on your machine.  Sorry.
