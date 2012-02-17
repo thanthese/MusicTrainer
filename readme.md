@@ -24,4 +24,4 @@ Once you're under way, use `return` to indicate that you've mastered a measure/s
 
 Java (SE) 1.5 +
 
-[JCommander](https://github.com/cbeust/jcommander) is rolled into the source.
+[JCommander](https://github.com/cbeust/jcommander) is rolled directly into the source.
